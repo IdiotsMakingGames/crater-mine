@@ -4,12 +4,13 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
-import com.img.cratermine.Actors.Crater;
 import com.img.cratermine.CraterMine;
+import com.img.cratermine.Entities.Crater;
 
 /**
  * Created by Gonza on 27/04/2016.
@@ -25,14 +26,14 @@ public class PlayScreen implements Screen {
 
     public PlayScreen(CraterMine craterMine) {
         this.craterMine = craterMine;
+        // Instantiate Stage & Actors
         stage = new Stage(new StretchViewport(CraterMine.V_WIDTH, CraterMine.V_HEIGHT));
         Gdx.input.setInputProcessor(stage); //configura el inputprocessor que se va a utilizar o que va a manejar las entradas (mouse, teclado, touch)
-        crater = new Crater();
+        crater = new Crater(100, 10, 0);
         background = new Image(new Texture("background.jpg"));
-        background.toBack();
+        // Load actors
         stage.addActor(background);
         stage.addActor(crater);
-
     }
 
     @Override
