@@ -9,8 +9,8 @@ import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
-import com.img.cratermine.Actors.Crater;
 import com.img.cratermine.CraterMine;
+import com.img.cratermine.Entities.Crater;
 
 /**
  * Created by Gonza on 27/04/2016.
