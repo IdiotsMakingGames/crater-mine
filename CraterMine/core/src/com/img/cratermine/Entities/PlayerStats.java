@@ -17,9 +17,18 @@ public class PlayerStats {
 		return attack;
 	}
 	
-	static void addGold(int addedGold){
-		gold += addedGold;
+	public static int getMinerals(){
+		return minerals;
 	}
+	
+	static void addGold(int addGold){
+		gold += addGold;
+	}
+	
+	static void addMinerals(int addMinerals){
+		minerals += addMinerals;
+	}
+	
 	
 	public static int getGold(){
 		return gold;
@@ -28,7 +37,7 @@ public class PlayerStats {
 	static void chanceToGetMinerals(){
 		Random randomGenerator = new Random();
 		int randomInt = randomGenerator.nextInt(100);
-		if(randomInt <= 1){
+		if(randomInt <= 20){
 			minerals++;
 		}
 	}

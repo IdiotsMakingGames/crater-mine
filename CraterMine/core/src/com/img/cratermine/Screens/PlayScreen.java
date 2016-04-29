@@ -36,7 +36,7 @@ public class PlayScreen implements Screen {
         // Instantiate Stage & Actors
         stage = new Stage(new StretchViewport(CraterMine.V_WIDTH, CraterMine.V_HEIGHT));
         Gdx.input.setInputProcessor(stage); //configura el inputprocessor que se va a utilizar o que va a manejar las entradas (mouse, teclado, touch)
-        crater = new Crater(10, 10, 0, 1);
+        crater = new Crater(20, 10, 0, 1);
         background = new Image(new Texture("background.jpg"));
         // Load actors
         stage.addActor(background);
@@ -62,6 +62,9 @@ public class PlayScreen implements Screen {
         font.setColor(Color.RED);
         font.draw(batch,"Health:", 25, 100);
         font.draw(batch,Integer.toString(Crater.getHealth()), 75, 100);
+        font.setColor(Color.CYAN);
+        font.draw(batch,"Minerals:", 25, 40);
+        font.draw(batch,Integer.toString(PlayerStats.getMinerals()), 85, 40);
         batch.end();
     }
 

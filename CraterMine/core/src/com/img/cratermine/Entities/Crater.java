@@ -25,7 +25,7 @@ public class Crater extends Actor {
 	        crater.health--;
 	        if(crater.health == 0){
 	        	PlayerStats.addGold(crater.goldToGive * 10);
-	        	crater.health = 10;
+	        	crater.health = 20;
 	        }
 	        PlayerStats.addGold(crater.goldToGive);
 	        PlayerStats.chanceToGetMinerals();
