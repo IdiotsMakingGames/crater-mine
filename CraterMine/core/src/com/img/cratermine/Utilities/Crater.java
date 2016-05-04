@@ -18,11 +18,9 @@ public class Crater extends Actor {
 	
     private TextureRegion craterTexture;
     private int health;
-    private int damage;
-    private int armor;
     private int goldToGive;
     
-    public Crater(int health, int damage, int armor, int goldToGive) {
+    public Crater(int health, int goldToGive) {
     	// Load variables
         craterTexture = new TextureRegion(new Texture("crater.png"));
         setX(CraterMine.V_WIDTH / 2 - craterTexture.getRegionWidth() / 2);
@@ -30,8 +28,6 @@ public class Crater extends Actor {
         setWidth(craterTexture.getRegionWidth());
         setHeight(craterTexture.getRegionHeight());
         this.health = health;
-    	this.damage = damage;
-    	this.armor = armor;
     	this.goldToGive = goldToGive;
     	// Bounds & Listener
     	this.setBounds(this.getX(), this.getY(), this.getWidth(), this.getHeight());

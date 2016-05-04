@@ -10,6 +10,8 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.img.cratermine.CraterMine;
 import com.img.cratermine.Utilities.Crater;
 import com.img.cratermine.Utilities.Hud;
+import com.img.cratermine.Utilities.Item;
+import com.img.cratermine.Utilities.ItemGenerator;
 
 /**
  * Created by Gonza on 27/04/2016.
@@ -29,13 +31,14 @@ public class PlayScreen implements Screen {
         // Instantiate Stage & Actors
         stage = new Stage(new StretchViewport(CraterMine.V_WIDTH, CraterMine.V_HEIGHT));
         Gdx.input.setInputProcessor(stage); //configura el inputprocessor que se va a utilizar o que va a manejar las entradas (mouse, teclado, touch)
-        crater = new Crater(20, 10, 0, 1);
+        crater = new Crater(20, 1);
         background = new Image(new Texture("background.jpg"));
         hud = new Hud();
         // Load actors
         stage.addActor(background);
         stage.addActor(crater);
-        stage.addActor(hud.getActor());
+        stage.addActor(hud);
+
     }
 
     @Override
@@ -46,8 +49,6 @@ public class PlayScreen implements Screen {
     @Override
     public void render(float delta) {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
-        hud.update();
 
         stage.act(delta);
         stage.draw();
