@@ -68,8 +68,6 @@ public class ItemGenerator {
 		fValue += fMod.minValue;
 		Item item = new Item(bMod,bValue,fMod,fValue);
 		return item;
-		
-		
 	}
 	 
 	private static battleMod randomBMod() {

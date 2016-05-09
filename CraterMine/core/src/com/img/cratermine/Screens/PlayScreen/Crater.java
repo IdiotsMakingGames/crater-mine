@@ -11,6 +11,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.img.cratermine.CraterMine;
 import com.img.cratermine.Utilities.GAME_VALUES;
+import com.img.cratermine.Utilities.PlanetGenerator;
 
 import java.util.Random;
 
@@ -34,7 +35,7 @@ public class Crater extends Group {
         currentHealth = maxHealth;
         Skin skin = new Skin(Gdx.files.internal("skin/uiskin.json"));
         craterImage = new Image(new Texture("crater.png"));
-        nameLabel = new Label("PIRULIN", skin);
+        nameLabel = new Label(PlanetGenerator.generatePlanetName(), skin);
         healthLabel = new Label("Health: " + currentHealth, skin);
         healthImage = new Image(new Texture("healthColor.png"));
         // Configure Class  ############ Se puede utilizar la funcion "setBounds()" para poner los valores de X, Y, HEIGHT, WIDTH en una linea, pero es mas visible usando las 4 funciones siguientes.
@@ -83,6 +84,7 @@ public class Crater extends Group {
             currentHealth -= GAME_VALUES.getAttack();
             if(currentHealth == 0){
                 GAME_VALUES.addGold(goldToGive * 10);
+                nameLabel.setText(PlanetGenerator.generatePlanetName());
                 currentHealth = 20;
             }
             GAME_VALUES.addGold(goldToGive);
