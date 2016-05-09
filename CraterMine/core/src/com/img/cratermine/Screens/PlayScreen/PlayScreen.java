@@ -1,4 +1,4 @@
-package com.img.cratermine.Screens;
+package com.img.cratermine.Screens.PlayScreen;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -8,10 +8,6 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.img.cratermine.CraterMine;
-import com.img.cratermine.Utilities.Crater;
-import com.img.cratermine.Utilities.Hud;
-import com.img.cratermine.Utilities.Item;
-import com.img.cratermine.Utilities.ItemGenerator;
 
 /**
  * Created by Gonza on 27/04/2016.
@@ -38,7 +34,6 @@ public class PlayScreen implements Screen {
         stage.addActor(background);
         stage.addActor(crater);
         stage.addActor(hud);
-
     }
 
     @Override
@@ -49,7 +44,6 @@ public class PlayScreen implements Screen {
     @Override
     public void render(float delta) {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
         stage.act(delta);
         stage.draw();
     }
